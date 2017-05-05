@@ -60,6 +60,8 @@ Java_com_example_fmy_selfplaymusic_MainActivity_effects(JNIEnv *env, jobject ins
 
             //添加一个处理单元到通道
             channel->addDSP(0,dsp);
+
+
             break;
             //大叔
         case 3:
@@ -100,7 +102,10 @@ Java_com_example_fmy_selfplaymusic_MainActivity_effects(JNIEnv *env, jobject ins
 
 
     }
-
+    dsp->release();
+    sound->release();
+    system->close();
+    system->release();
 }
 
 using namespace std;
