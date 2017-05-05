@@ -43,7 +43,12 @@ Java_com_example_fmy_selfplaymusic_MainActivity_playsMusic(JNIEnv *env, jobject 
 
     //线程休眠 以微妙 所以要转
     usleep(duration*1000);
+    //释放资源
+    sound->release();
+    system->close();
+    system->release();
 
     env->ReleaseStringUTFChars(music_path_, music_path);
+
 }
 
